@@ -20,31 +20,27 @@
       <a href="{{url_for('uredi_korisnika', ID=korisnik[0])}}"><button>Uredi korisnika</button></a>
       <a href="{{url_for('home')}}"><button>Odjava</button></a>
 
-      <form action="{{url_for('izbrisi_novost',ID=novosti[0])}}" method='POST'>
 
         <table>
           <tr>
             <th> Datum </th>  <!--th table header-->
             <th> Naziv </th>
             <th colspan="2"> Obavjest </th>          <!--colspan -> spajanje stupaca, 2 spajanje 2 stupac-->
-            <th> Brisanje </th>
+
           </tr>
 
         {%for novost in novosti%}
 
           <tr>
-            <td style="display: none;"> <input value="{{novost[0]}}" name="ID"> </td>
             <td> {{novost[1]}} </td>
             <td> {{novost[2]}} </td>
             <td colspan="2"> {{novost[3]}} </td>
-            <td> <button type="submit"> Brisanje </button> </td>
           </tr>
 
         {%endfor%}
 
         </table>
 
-      </form>
 
     </center>
 

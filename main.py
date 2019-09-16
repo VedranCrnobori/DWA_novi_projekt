@@ -68,16 +68,5 @@ def uredi_korisnika(ID):
         korisnik=domain.odaberi_korisnika(ID)
         return render_template('Novosti.html', novosti=novost, korisnik=korisnik)
 
-@app.route("/izbrisi_novost/<ID>", methods=['POST'])
-def izbrisi_novost(ID):
-    print('Ovdje')
-    if request.method=='POST':
-        id=request.form["ID"]
-        domain.izbrisi_novost(id)
-        novost=domain.dohvati_novost()
-        korisnik=domain.odaberi_korisnika(ID)
-        return render_template('Novosti.html', novosti=novost, korisnik=korisnik)
-
-
 if __name__ == '__main__':
     app.run(debug = True)

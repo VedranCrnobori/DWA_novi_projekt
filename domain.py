@@ -53,10 +53,3 @@ def dohvati_novost(): #nije potreban parametar jer će dohvatiti sve što je spr
     novosti=kursor.fetchall()
     print (novosti)
     return novosti
-
-def izbrisi_novost(ID):
-    konekcija=povezivanje()
-    kursor=konekcija.cursor()
-    kursor.execute("DELETE FROM Novosti WHERE ID=?", (ID,))
-    konekcija.commit()
-    return True
