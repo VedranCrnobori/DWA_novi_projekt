@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Novosti </title> <!--title= prikazuje naziv u tabu u browseru-->
+    <style>
+        table {font-family: arial,sans-serif;border-collapse:collapse; width: 50%}
+        td, th {border:1px solid #ddd}
+        tr: nth-child (even) {background-color: #ddd} /* nth child --> ento dijete, odnosi se na blok naredbi u vitičastim zagradama. Even -> parametar, svaki drugi će biti odabrane boje. Redak, parent je cijela tablica */
+        button {margin-bottom: 2%;}
+     </style>
+  </head>
+
+<body>
+
+    <center>
+      <h1> Novosti </h1>
+
+      <a href="{{url_for('dodaj_novost', ID=korisnik[0])}}"><button>Dodaj novost</button></a>
+      <a href="{{url_for('uredi_korisnika', ID=korisnik[0])}}"><button>Uredi korisnika</button></a>
+      <a href="{{url_for('home')}}"><button>Odjava</button></a>
+
+      <form action="{{url_for('izbrisi_novost',ID=novosti[0])}}" method='POST'>
+
+        <table>
+          <tr>
+            <th> Datum </th>  <!--th table header-->
+            <th> Naziv </th>
+            <th colspan="2"> Obavjest </th>          <!--colspan -> spajanje stupaca, 2 spajanje 2 stupac-->
+            <th> Brisanje </th>
+          </tr>
+
+        {%for novost in novosti%}
+
+          <tr>
+            <td style="display: none;"> <input value="{{novost[0]}}" name="ID"> </td>
+            <td> {{novost[1]}} </td>
+            <td> {{novost[2]}} </td>
+            <td colspan="2"> {{novost[3]}} </td>
+            <td> <button type="submit"> Brisanje </button> </td>
+          </tr>
+
+        {%endfor%}
+
+        </table>
+
+      </form>
+
+    </center>
+
+
+</body>
+</html>

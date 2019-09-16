@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Dodaj obavjest </title>
+
+    <style>
+        button {margin-top: 1%;}
+    </style>
+
+
+</head>
+
+<body>
+  <center>
+    <h1> Dodaj obavjest </h1>
+
+  <form action="{{url_for('dodaj_novost', ID=ID)}}" method="post"> <!-- traži ovaj URL 'dodaj_novost' u mainu-->
+
+      <table>
+        <tr>
+          <td> Datum :</td>
+          <td>
+            <input type="text" placeholder="Unesite datum obavjesti" name="Datum">
+          <td>
+        </tr>
+
+        <tr>
+          <td> Naziv obavjesti :</td>
+          <td>
+            <input type="text" placeholder="Unesite naziv obavjesti" name="Naziv">
+          <td>
+        </tr>
+
+          <tr>
+            <td> Obavjest :</td>
+            <td>
+            <textarea name="Obavjest" placeholder="Unesi tekst"  rows="8" cols="80"></textarea> <!-- 8,80 text area-->
+            <td>
+          </tr>
+
+
+      </table>
+
+          <button type="submit">Spremi</button>
+
+    </form>
+
+
+  </center>
+
+</body>
+
+</html>

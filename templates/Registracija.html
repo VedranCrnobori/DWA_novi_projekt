@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> <!--meta charset utf8 znači da se mogu korisitit diakritički znakovi-->
+    <title> Registracija korisnika </title>
+
+    <style>
+        button {margin-top: 1%;}
+    </style>
+
+</head>
+
+<body>
+  <center>
+    <h1> Registracija korisnika </h1>
+
+<form action="{{url_for('registracija')}}" method="post"> <!--ovo je novo, forma za upisivanje registracije. URL for je za lakši pronalazak mjesta spremanja onoga što je
+korisnik unio. URL for će pronači ono što je u zagradi() i koriti če metodu post, da može spremiti unešeni tekst iz inputa. Tekst ce se spremati pomocu name i dole navedenih
+-->
+
+  <table>
+    <tr>
+      <td> Ime :</td>
+      <td>
+        <input type="text" placeholder="Ime" name="Ime">
+      <td>
+    </tr>
+
+    <tr>
+      <td> Prezime :</td>
+      <td>
+        <input type="text" placeholder="Prezime" name="Prezime">
+      <td>
+    </tr>
+
+      <tr>
+        <td> e-mail :</td>
+        <td>
+          <input type="email" placeholder="e-mial" name="email">
+        <td>
+      </tr>
+
+      <tr>
+        <td> Lozinka :</td>
+        <td>
+          <input type="password" placeholder="Lozinka" name="Lozinka">
+        <td>
+      </tr>
+
+      <tr>
+        <td> Grad studiranja :</td>
+        <td>
+          <input type="text" placeholder="Grad studiranja" name="Grad_studiranja">
+        <td>
+      </tr>
+
+      <tr>
+        <td> Fakultet :</td>
+        <td>
+          <input type="text" placeholder="Fakultet" name="Fakultet">
+        <td>
+      </tr>
+
+    </table>
+
+    <button type="submit">Potvrdi</button> <a href="{{url_for('home')}}"><button>Odustani</button></a>
+
+</form>
+
+    </center>
+
+</from>
+</body>
+</html>

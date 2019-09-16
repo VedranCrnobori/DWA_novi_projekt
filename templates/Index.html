@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> <!--utf-8 dijakritički znakovi-->
+    <title> Prijava korisnika </title>
+
+    <style>
+        button {margin-top: 1%;}
+    </style>
+
+  </head>
+
+<body>
+
+    <center>
+      <h1> Prijava korisnika </h1>
+
+<form action="{{url_for('home')}}" method="post"> <!-- submitanje botunom izvršava se ova akcija u liniji-->
+
+        <table>
+            <tr>
+                <td> e-mail: </td>
+                <td>
+                    <input type="text" placeholder="e-mail" name="email">
+                </td>
+            </tr>
+
+            <tr>
+                <td> Lozinka: </td>
+                <td>
+                    <input type="password" placeholder="Lozinka" name="Lozinka">
+                </td>
+            </tr>
+
+        </table>
+
+          <button type="submit">Prijava</button> <a href="{{url_for('registracija')}}"><button>Postani korisnik</button></a> <!--button ide van table-->
+          <!--botun prijava ima metodu post. šalje vrijednosti iz inputa u main na provjeru. Botun potani korisnk ima metodu get pomoču koje
+          trazi zahtjev za renderanje templejta registracija.html. -->
+
+</form>
+      </center>
+
+</body>
+</html>
